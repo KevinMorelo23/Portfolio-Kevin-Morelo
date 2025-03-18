@@ -1,0 +1,213 @@
+---
+import Pasarela4 from "../components/img/imagen4Pasarela.png";
+import ContrastCraft4 from "../components/img/imagen4Contrast.png";
+import Observatorio4 from "../components/img/imagen4Observatorio.png";
+import NeoFactura4 from "../components/img/imagen4Neo.png";
+import TransdigitalCoop4 from "../components/img/imagen4TransdigitalCoop.png";
+
+const projects = [
+  {
+    title: "Proyecto 1: Pararela",
+    description: 
+      "Aplicación integral para la gestión de tiendas, diseñada para optimizar operaciones comerciales. Características principales: - Sistema de ventas completo - Dashboards de rendimiento y análisis - Generación de reportes detallados - Gestión de trabajadores - Control de inventario en tiempo real",
+    images: [Pasarela4.src],
+    tecnologies: ["Php", "SQL"],
+    github: "",
+    preview: "",
+  },
+  {
+    title: "ContraCraft",
+    description:
+      "ContraCraft es una aplicación web que genera combinaciones de colores aleatorias y analiza su contraste para evaluar su relación visual. Su objetivo es proporcionar una referencia rápida sobre la armonía y accesibilidad de diferentes combinaciones, ayudando a diseñadores y desarrolladores a comprender cómo interactúan los colores en términos de legibilidad y estética. Con un enfoque simple e intuitivo, ContraCraft facilita la exploración de paletas sin necesidad de configuraciones manuales, brindando inspiración y apoyo en la creación de diseños visualmente efectivos.",
+    images: [ContrastCraft4.src],
+    tecnologies: ["Astro", "Javascript", "Tailwind"],
+    github: "https://github.com/KevinMorelo23/ContrastCraft",
+    preview: "https://contrast-craft.vercel.app/",
+  },
+  {
+    title: "Neo Factura",
+    description:
+      "Neo factura es un sistema web que te permite gestionar tus facturas de manera sencilla y eficiente tambien gestion de clientes, cotizaciones, las cuales pueden ser enviadas directamente al correo del cliente.",
+    images: [NeoFactura4.src],
+    tecnologies: [
+      "Laravel 12",
+      "Vite",
+      "Tailwind",
+      "React",
+      "Typescript",
+      "SQL",
+    ],
+    github: "https://github.com/KevinMorelo23/NeoFactura",
+    preview: "",
+  },
+  {
+    title: "Observatorio de la Educación en Córdoba",
+    description:
+      "Observatorio de la Educación en Córdoba es una aplicación web que muestra los datos de la educación en Córdoba, en formato de graficos Power BI. Esta aplicación se utiliza para analizar los datos de educación en Córdoba y proporcionar información relevante para la toma de decisiones educativas.",
+    images: [Observatorio4.src],
+    tecnologies: [
+      "Astro",
+      "Laravel-Filament",
+      "Power BI",
+      "Javascript",
+      "Tailwind",
+    ],
+    github: "https://github.com/FILIPRAIDER/Observatorio-educacion",
+    preview: "observatorio-educacion.vercel.app/",
+  },
+  {
+    title: "TransdigitalCoop",
+    description:
+      "Se rediseño la pagina de TransigitalCoop para que sea más amigable y fácil de usar, además de mejorar la experiencia de usuario.",
+    images: [TransdigitalCoop4.src],
+    tecnologies: ["Astro", "Tailwind"],
+    github: "https://github.com/KevinMorelo23/TransDigitalCoop.git",
+    preview: "https://transdigitalcoop.vercel.app/",
+  },
+];
+---
+
+<section class="flex flex-col">
+  <h1
+    class="py-20 text-2xl flex flex-row gap-x-4 pb-10 text-gray-300 font-bold"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-prompt"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M5 7l5 5l-5 5"></path>
+      <path d="M13 17l6 0"></path>
+    </svg>
+    Proyectos
+  </h1>
+
+  <div class="grid grid-cols-1 gap-20">
+    {
+      projects.map((project, index) => (
+        <div
+          key={index}
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        >
+          {/* Sección de texto a la izquierda */}
+          <div class="flex flex-col gap-4">
+            <h1 class="text-gray-100 font-bold text-xl">{project.title}</h1>
+            <p class="text-sm font-normal text-gray-200 dark:text-gray-400">
+              {project.description}
+            </p>
+            <ul class="flex gap-2 flex-wrap">
+              {project.tecnologies.map((tech, i) => (
+                <li
+                  key={i}
+                  class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+
+            {/* Botones debajo de la descripción */}
+            <div class="flex gap-4 items-center">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 text-sm flex gap-x-2 items-center py-2 border rounded-lg px-4 hover:text-gray-800 hover:border-gray-800 hover:bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  class="lucide lucide-github"
+                >
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                  <path d="M9 18c-4.51 2-5-2-7-2" />
+                </svg>
+                Código
+              </a>
+
+              <a
+                href={project.preview}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 text-sm flex gap-x-2 items-center py-2 border rounded-lg px-4 hover:text-gray-800 hover:border-gray-800 hover:bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-eye"
+                >
+                  <>
+                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                    <circle cx="12" cy="12" r="3" />
+                  </>
+                </svg>
+                Preview
+              </a>
+            </div>
+          </div>
+
+          {/* Sección de imágenes a la derecha */}
+          <div class="grid grid-cols-1 w-full">
+            {project.images.map((image, imgIndex) => (
+              <div key={imgIndex} class="w-full">
+                <a
+                  href={`#img-${project.title.replace(/\s+/g, "-")}-${imgIndex}`}
+                >
+                  <img
+                    src={image}
+                    alt={`Captura de pantalla de ${project.title} ${imgIndex + 1}`}
+                    loading="lazy"
+                    class="w-full object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-110"
+                  />
+                </a>
+
+                {/* Modal de imagen en pantalla completa */}
+                <div
+                  id={`img-${project.title.replace(/\s+/g, "-")}-${imgIndex}`}
+                  class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden-target"
+                >
+                  <a href="#" class="absolute inset-0" />
+                  <img src={image} class="max-w-full max-h-[80%] rounded-lg" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <style>
+    /* Ocultar imágenes hasta que se haga clic */
+    .hidden-target {
+      display: none;
+    }
+
+    /* Mostrar imagen cuando el hash coincide */
+    :target {
+      display: flex;
+    }
+  </style>
+</section>

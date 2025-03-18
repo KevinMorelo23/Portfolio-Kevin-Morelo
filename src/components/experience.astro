@@ -1,0 +1,63 @@
+---
+const experience = [
+  {
+    title: "Estudiante de Ing. en Sistemas",
+    date: "Febrero 2021 - Actualidad",
+    description: "Cursando en la Universidad Cooperativa de Colombia",
+  },
+  {
+    title: "Auxiliar de investigación en Modelos de predicción de Preeclampsia",
+    date: "Octubre 2024 - Actualidad",
+    description:
+      "Creación de un modelo de machine learning para predecir la preeclampsia con Python",
+  },
+  {
+    title: "Diplomado en Business Intelligence",
+    date: "Febrero 2025 - Actualidad",
+    description:
+      "Cursando Diplomado en Business Intelligence para el análisis de datos",
+  },
+  {
+    title: "Bootcamp de Análisis de Datos",
+    date: "Marzo 2025 - Actualidad",
+    description:
+      "Cursando Bootcamp de Análisis de Datos con la Universidad UTB en asociación con el Ministerio de Tecnologías de la Información y las Comunicaciones de Colombia",
+  },
+];
+---
+
+<h1 class="text-gray-300 text-2xl font-bold flex flex-row gap-x-4 pb-10 py-4">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-book-copy"
+    ><path d="M2 16V4a2 2 0 0 1 2-2h11"></path><path
+      d="M22 18H11a2 2 0 1 0 0 4h10.5a.5.5 0 0 0 .5-.5v-15a.5.5 0 0 0-.5-.5H11a2 2 0 0 0-2 2v12"
+    ></path><path d="M5 14H4a2 2 0 1 0 0 4h1"></path></svg
+  >
+  Estudios
+</h1>
+
+<ol class="relative border-l border-gray-200 dark:border-gray-700">
+  {
+    experience.map((item, index) => (
+      <li class="mb-10 ml-4">
+        <div class="absolute w-3 h-3 bg-blue-600 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900" />
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+          {item.date}
+        </time>
+        <h3 class="text-lg font-semibold text-yellow-200/80">{item.title}</h3>
+        <p class="mb-4 text-base font-normal text-gray-200 dark:text-gray-400">
+          {item.description}
+        </p>
+      </li>
+    ))
+  }
+</ol>
